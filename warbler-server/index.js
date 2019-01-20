@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const errorHandler = require('./handlers/error');
 
 
 // settings
@@ -13,6 +14,8 @@ app.use((req, res, next) => {
     err.status = 404;
     next(err);
 });
+
+app.use(errorHandler);
 
 app.listen(port, () => {
     console.log(`Server is starting on ${port}`);
