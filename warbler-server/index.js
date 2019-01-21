@@ -23,6 +23,6 @@ app.use(function (req, res, next) {
 // leave error handler here!
 app.use(errorHandler);
 
-app.listen(PORT, function () {
+app.listen(PORT, () => {
     console.log(`Server is starting on port ${PORT}`);
 });
